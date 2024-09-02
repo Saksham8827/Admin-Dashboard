@@ -1,0 +1,60 @@
+{
+  "Product": [
+    {
+      "product_name": "Americaan tourister cabin bag",
+      "product_price": "449",
+      "product_image": "https://5.imimg.com/data5/SELLER/Default/2024/5/422955548/TB/JM/ZY/5609604/american-tourister-norton-overnighter-1000x1000.jpeg",
+      "product_brand": "american tourister",
+      "product_review": "Average",
+      "product_rating": "4",
+      "id": "6c36"
+    },
+    {
+      "product_name": "american tourister ambero dft bag",
+      "product_price": "7599",
+      "product_image": "https://imgs.search.brave.com/c_lDLRlz5FmL1UeCfLZ0_uBZL8eiiTigleng90LuVSw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly81Lmlt/aW1nLmNvbS9kYXRh/NS9TRUxMRVIvRGVm/YXVsdC8yMDIzLzcv/MzI1MDAyNjk2L1FY/L1FQL1hRLzExMjQ2/NDI2NS9hbWVyaWNh/bi10b3VyaXN0ZXIt/NTItbC1zdHJvbGxl/eS1kdWZmZWwtYmFn/LXJhbGUtYmxhY2st/cmVndWxhci1jYXBh/Y2l0eS01MDB4NTAw/LmpwZWc",
+      "product_brand": "american tourister",
+      "product_review": "Good",
+      "product_rating": "4",
+      "id": "44e1"
+    },
+    {
+      "id": "29b2",
+      "product_name": "American tourister luggagae bag",
+      "product_price": "7999",
+      "product_image": "https://www.bing.com/images/blob?bcid=rwLasqPrZXMH.5F7Y2rWdGxi10V......xo",
+      "product_brand": "american tourister",
+      "product_review": "good",
+      "product_rating": "5.0"
+    }
+  ],
+  "Registration": [
+    {
+      "id": "aea6",
+      "name": "saksham jain",
+      "email": "teenusaksham96@gmail.com",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSAIyDtkwPUSsEQaiI-bnrNp8r8QeV0wHEkw&s",
+      "mobile": "8827309179",
+      "password": "1234",
+      "cpassword": "1234"
+    },
+    {
+      "id": "d2dc",
+      "name": "saksham jain",
+      "email": "teenusaksham96@gmail.com",
+      "img": "\"C:\\Users\\teenu\\Desktop\\sani.png.jpg\"",
+      "mobile": "08827309179",
+      "password": "123456",
+      "cpassword": "123456"
+    },
+    {
+      "id": "81c0",
+      "name": "saksham jain1",
+      "email": "teenusaksham96@gmail.com",
+      "img": "\"C:\\Users\\teenu\\Desktop\\sani.png.jpg\"",
+      "mobile": "08827309179",
+      "password": "123456",
+      "cpassword": "123456"
+    }
+  ]
+}
