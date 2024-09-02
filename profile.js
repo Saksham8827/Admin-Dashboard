@@ -1,7 +1,7 @@
 logininfo = JSON.parse(localStorage.getItem('logininfo'));
 const id = logininfo.id.toString();
 console.log(id);
-const url = `http://localhost:4000/Registration/${id}`;
+const url = `https://admin-dashboard-json-live-t4sd.vercel.app/Registration/${id}`;
 
 fetch(url)
   .then(response => response.json())

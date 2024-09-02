@@ -1,6 +1,6 @@
 const login = async () => {
   // Send a GET request to the Registration endpoint on localhost:4000
-  let data = await fetch("http://localhost:4000/Registration");
+  let data = await fetch("https://admin-dashboard-json-live-t4sd.vercel.app/Registration");
   
   // Parse the response as JSON
   let response = await data.json();

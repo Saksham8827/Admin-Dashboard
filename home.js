@@ -17,7 +17,7 @@ function profileopen() {  //profile page redirect
 
 //total prodcut show 
 (async function(){
-  let data = await fetch('http://localhost:4000/Product');
+  let data = await fetch('https://admin-dashboard-json-live-t4sd.vercel.app/Product');
   let res = await data.json();
   let counter = 0;
   const elem = document.querySelector('#totalproduct');
@@ -33,7 +33,7 @@ function profileopen() {  //profile page redirect
 //total amount of products
 (async () => {
   try {
-    const response = await fetch('http://localhost:4000/Product');
+    const response = await fetch('https://admin-dashboard-json-live-t4sd.vercel.app/Product');
     const data = await response.json();
     const totalPrice = data.reduce((acc, current) => acc + parseInt(current.product_price), 0);
 

@@ -1,6 +1,6 @@
 (async function () {
     // Define the URL for the API endpoint to fetch product data
-    let url = "http://localhost:4000/Product";
+    let url = "https://admin-dashboard-json-live-t4sd.vercel.app/Product";
   
     // Use the fetch API to send a GET request to the API endpoint
     let data = await fetch(url);

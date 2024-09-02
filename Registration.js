@@ -18,7 +18,7 @@ const registration = () => {
   };
 
   // Define the URL for the API endpoint to register a new user
-  let url = "http://localhost:4000/Registration";
+  let url = "https://admin-dashboard-json-live-t4sd.vercel.app/Registration";
 
   // Define the request method as POST and set the request body to the user input data
   let method = {
