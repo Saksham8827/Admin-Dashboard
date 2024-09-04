@@ -1,5 +1,5 @@
-const registration = () => {
-  // Get the user input values from the registration form
+const registration = async () => {
+  // Get the values from the HTML form elements
   let name = document.querySelector("#name").value;
   let email = document.querySelector("#email").value;
   let img = document.querySelector("#img").value;
@@ -7,28 +7,46 @@ const registration = () => {
   let password = document.querySelector("#password").value;
   let cpassword = document.querySelector("#cpassword").value;
 
-  // Create a new object to hold the user input data
-  let obj = {
-    name: name,
-    email: email,
-    img: img,
-    mobile: mobile,
-    password: password,
-    cpassword: cpassword,
+  // Basic validation
+  if (password !== cpassword) {
+    alert("Error: Passwords do not match");
+    return;
+  }
+
+  if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+    alert("Error: Invalid email address");
+    return;
+  }
+
+  // Create a JavaScript object to hold the user data
+  let userData = {
+    name,
+    email,
+    img,
+    mobile,
+    password,
+    cpassword,
   };
 
-  // Define the URL for the API endpoint to register a new user
+  // Define the URL and method for the API request
   let url = "https://admin-dashboard-json-live-t4sd.vercel.app/Registration";
-
-  // Define the request method as POST and set the request body to the user input data
-  let method = {
+  let options = {
     method: "POST",
-    header: {
+    headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(obj),
+    body: JSON.stringify(userData),
   };
-
-  // Send the registration request to the API endpoint
-  fetch(url, method);
+fetch(url, options);
+  try {
+    
+    alert("Registration successful!");
+    window.location.href = "index.html"; // Redirect to index.html
+  } catch (error) {
+    alert("Error registering user: " + error.message);
+  }
 };
+
+function loginredirect() {
+  window.location.href = "index.html";
+}

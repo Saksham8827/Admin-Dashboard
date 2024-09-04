@@ -1,49 +1,31 @@
-const login = async () => {
-  // Send a GET request to the Registration endpoint on localhost:4000
-  let data = await fetch("https://admin-dashboard-json-live-t4sd.vercel.app/Registration");
-  
-  // Parse the response as JSON
-  let response = await data.json();
-  
-  // Log the response to the console for debugging purposes
-  console.log(response);
-  
-  // Get the email and password values from the HTML form
-  let email = document.querySelector("#email").value;
-  let password = document.querySelector("#password").value;
+async function login() {
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
-  // Find the user in the response data that matches the entered email and password
-  let finddata = await response.find(
-    (e) => e.email === email && e.password === password
-  );
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  if (finddata) {
-    document.location.href = "home.html";
-
-    // If a matching user is found, store their info in local storage
-    window.localStorage.setItem("logininfo", JSON.stringify(finddata));
-    
-    // Redirect the user to the home page
-  } else {
-    // If no matching user is found, prompt the user to retry or register
-    var choice = confirm(
-      "Your credentials are incorrect. Click 'OK' to retry or 'Cancel' to register yourself."
-    );
-  
-    if (choice) {
-      // If the user clicks 'OK', do nothing and let them retry
-    } else {
-      // If the user clicks 'Cancel', redirect them to the registration page
-      document.location.href = "Registration.html";
+  if (email && password) {
+    try {
+      const response = await fetch('https://admin-dashboard-json-live-t4sd.vercel.app/Registration');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      const userData =await data.find(user => user.email === email && user.password === password);
+      if (userData) {
+        localStorage.setItem('logininfo', JSON.stringify(userData));
+        alert('Login successful!');
+        window.location.href = 'home.html'; // Redirect to home.html
+      } else {
+        alert('Invalid email or password');
+      }
+    } catch (error) {
+      console.error(error);
+      alert(`Error logging in: ${error.message}`);
     }
+  } else {
+    alert('Please enter both email and password');
   }
 
-  console.log(finddata);
-  return false;
-};
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function redirectRegister() {
-  document.location.href = "Registration.html";
+  return false; // Prevent form submission
 }
